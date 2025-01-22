@@ -1,16 +1,17 @@
-# Como melhorar a Usabilidade do seu Software
+# Melhorando o Desempenho e a Eficiência em Aplicações Delphi com cache de dados
+### **Academia do Código - Alessandro Medeiros**
 
-## 1 - Boas Vindas (3 Aulas)
+## 1 - Introdução ao Uso de Cache em Aplicações Delphi (3 Aulas)
 
-#### 1.1 - Bem vindo
+#### 1.1 - ....
 
-#### 1.2 - O dobro do Conteúdo na Metade do Tempo
+#### 1.2 - ....
 
-Dica para acelerar aprendizado e consumo de conteúdo, extensão do Google Chrome que permite acelerar qualquer vídeo que esteja sendo executado.
+
 
 [Plugin Extensão Chrome - Acelerar vídeo](https://chromewebstore.google.com/detail/video-speed-controller/nffaoalbilbmmfgbnbgppjihopabppdk?hl=pt-BR&utm_source=chrome-ntp-launcher)
 
-##### 1.3 - Como utilizar o Portal do Aluno
+##### 1.3 - ........
 
 ## 2 - Como melhorar a usabilidade do seu software (26 Aulas)
 
