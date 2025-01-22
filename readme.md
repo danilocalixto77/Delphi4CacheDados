@@ -3,9 +3,12 @@
 
 ## 1 - Introdução ao Uso de Cache em Aplicações Delphi (3 Aulas)
 
-#### 1.1 - ....
+#### 1.1 - Apresentação
 
-#### 1.2 - ....
+#### 1.2 - Princípios Básicos de Cache de Dados
+
+
+
 
 
 
