@@ -7,6 +7,10 @@
 
 #### 1.2 - Princípios Básicos de Cache de Dados
 
+#### 1.3 - Implementação Inicial do Cache em Projetos Delphi
+
+
+
 
 
 
