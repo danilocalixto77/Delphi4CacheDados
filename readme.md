@@ -12,3 +12,7 @@
 [Download Github LocalCache4D](https://github.com/academiadocodigo/localcache4d)
 
 
+Instalação pelo **Boss**:
+
+        boss init -q && boss i https://github.com/academiadocodigo/localcache4d
+
