@@ -16,3 +16,16 @@ Instalação pelo **Boss**:
 
         boss init -q && boss i https://github.com/academiadocodigo/localcache4d
 
+## 2 - Otimizando Consultas com Cache de Dados
+
+#### 2.1 - Entendendo Impacto de Consultas Repetitivas
+
+#### 2.2 - Estratégias Avançadas de Cache para Consultas Delphi
+
+#### 2.3 - Monitoramento e Melhoria Contínua
+
+        continua aqui....
+
+
+
+
