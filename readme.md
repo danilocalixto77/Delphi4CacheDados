@@ -24,7 +24,9 @@ Instalação pelo **Boss**:
 
 #### 2.3 - Monitoramento e Melhoria Contínua
 
-        continua aqui....
+Instalar os SQLite 
+
+[Tutorial para instalação do SQLite](https://github.com/danilocalixto77/SQLiteTutorial)
 
 
 
