@@ -29,7 +29,10 @@ Instalar os SQLite
 [Tutorial para instalação do SQLite](https://github.com/danilocalixto77/SQLiteTutorial)
 
 
-#### 2.4 .....
+#### 2.4 ..........
+
+
+Proxima aula..
 
 
 
