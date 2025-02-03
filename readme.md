@@ -28,13 +28,9 @@ Instalar os SQLite
 
 [Tutorial para instalação do SQLite](https://github.com/danilocalixto77/SQLiteTutorial)
 
+Conexão com o banco SQLite
 
-#### 2.4 ..........
-
-
-Proxima aula..
-
-
+2:00 minutos ...
 
 
 
