@@ -28,9 +28,10 @@ Instalar os SQLite
 
 [Tutorial para instalação do SQLite](https://github.com/danilocalixto77/SQLiteTutorial)
 
-Conexão com o banco SQLite
+**Dicas de Monitoramento**
 
-2:00 minutos ...
+1 - Logs
 
 
+13min
 

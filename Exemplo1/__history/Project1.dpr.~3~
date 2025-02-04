@@ -4,9 +4,7 @@ uses
   Vcl.Forms,
   Unit1 in 'Unit1.pas' {Form1},
   Unit2 in 'Unit2.pas',
-  Unit3 in 'Unit3.pas' {DataModule3: TDataModule},
-  Log.Monitor in 'Log.Monitor.pas',
-  Log in 'Log.pas';
+  Unit3 in 'Unit3.pas' {DataModule3: TDataModule};
 
 {$R *.res}
 
