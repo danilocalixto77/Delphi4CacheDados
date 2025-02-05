@@ -33,5 +33,4 @@ Instalar os SQLite
 1 - Logs
 
 
-13min
 
