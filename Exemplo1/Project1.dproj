@@ -104,13 +104,13 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Unit2.pas"/>
-        <DCCReference Include="Unit3.pas">
-            <Form>DataModule3</Form>
+        <DCCReference Include="Data.Module.pas">
+            <Form>DMApp</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
         <DCCReference Include="Log.Monitor.pas"/>
-        <DCCReference Include="Log.pas"/>
+        <DCCReference Include="Log.Register.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

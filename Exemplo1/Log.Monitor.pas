@@ -11,11 +11,11 @@ type
   private
   public
     class function ReadLog(const LogFile: String;
-                           const Strings: TString): Boolean; virtual;
+                           const Strings: TStrings): Boolean; virtual;
     class function WriteLot(const LogFile, aMessage: String;
                             const CanCreate: Boolean = True;
                             const ClearBeforeWrite: Boolean = False;
-                            const UseDateTimeInLog: Boolean = True) : Boolan;
+                            const UseDateTimeInLog: Boolean = True): Boolean;
   end;
 
 
@@ -25,14 +25,14 @@ implementation
 var FMonitor: TMultiReadExclusiveWriteSynchronizer;
 
 class function TLogMonitor.ReadLog(const LogFile: String;
-  const Strings: TString): Boolean;
+  const Strings: TStrings): Boolean;
 begin
   FMonitor.BeginRead;
   FMonitor.EndRead;
 end;
 
 class function TLogMonitor.WriteLot(const LogFile, aMessage: String;
-  const CanCreate, ClearBeforeWrite, UseDateTimeInLog: Boolean): Boolan;
+  const CanCreate, ClearBeforeWrite, UseDateTimeInLog: Boolean): Boolean;
 begin
 
 end;

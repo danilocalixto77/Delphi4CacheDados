@@ -4,9 +4,9 @@ uses
   Vcl.Forms,
   Unit1 in 'Unit1.pas' {Form1},
   Unit2 in 'Unit2.pas',
-  Unit3 in 'Unit3.pas' {DataModule3: TDataModule},
+  Data.Module in 'Data.Module.pas' {DMApp: TDataModule},
   Log.Monitor in 'Log.Monitor.pas',
-  Log in 'Log.pas';
+  Log.Register in 'Log.Register.pas';
 
 {$R *.res}
 
@@ -14,6 +14,6 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TForm1, Form1);
-  Application.CreateForm(TDataModule3, DataModule3);
+  Application.CreateForm(TDMApp, DMApp);
   Application.Run;
 end.

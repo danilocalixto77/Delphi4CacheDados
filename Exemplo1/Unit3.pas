@@ -1,4 +1,4 @@
-unit Unit3;
+unit FDMApp;
 
 interface
 
@@ -12,7 +12,7 @@ uses
   FireDAC.Phys.SQLiteWrapper.Stat;
 
 type
-  TDataModule3 = class(TDataModule)
+  TDMApp = class(TDataModule)
     FDConnection1: TFDConnection;
     FDQuery1: TFDQuery;
   private
@@ -22,7 +22,7 @@ type
   end;
 
 var
-  DataModule3: TDataModule3;
+  DMApp: TDMApp;
 
 implementation
 
