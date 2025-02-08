@@ -55,6 +55,16 @@ begin
   TLogMonitor.WriteLot('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Inicio consulta');
   DMApp.FDQuery1.Close;
   DMApp.FDQuery1.SQL.Clear;
+  DMApp.FDQuery1.SQL.Add('SELECT * FROM cliente');
+  DMApp.FDQuery1.Open;
+
+  DMApp.FDQuery1.First;
+  while not(DMApp.FDQuery1.Eof) do
+  begin
+    Memo1.Lines.Add(DMApp.FDQuery1.FieldByName('nome').AsString);
+    DMApp.FDQuery1.Next;
+  end;
+  TLogMonitor.WriteLot('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Fechanco consulta');
 
 end;
 

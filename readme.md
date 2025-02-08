@@ -32,7 +32,7 @@ Instalar os SQLite
 
 1 - Logs
 
-13 minutos....
+28 MINUTOS IMPLEMENTAÇAO DO MONITOR
 
 
 
