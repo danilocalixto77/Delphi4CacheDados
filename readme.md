@@ -32,7 +32,10 @@ Instalar os SQLite
 
 1 - Logs
 
-28 MINUTOS IMPLEMENTAÇAO DO MONITOR
+Seguir
+minuto 28 em diante para finalizar... ajuste do monitoramento de log
+
+
 
 
 
