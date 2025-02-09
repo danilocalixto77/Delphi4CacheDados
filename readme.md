@@ -37,7 +37,7 @@ Criação de log no projeto.
 #### 3.1 - Explorando Recursos Avançados do LocalCache4D
 
 
-
+#### 3.2 - ..... proxima aula......
 
 
 

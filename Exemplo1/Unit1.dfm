@@ -10,6 +10,8 @@ object Form1: TForm1
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
   TextHeight = 15
   object Edit1: TEdit
     Left = 24
@@ -32,7 +34,7 @@ object Form1: TForm1
     Top = 45
     Width = 75
     Height = 25
-    Caption = 'Button1'
+    Caption = 'Gravar Dados'
     TabOrder = 2
     OnClick = Button1Click
   end
@@ -41,7 +43,7 @@ object Form1: TForm1
     Top = 113
     Width = 75
     Height = 25
-    Caption = 'Button2'
+    Caption = 'Ler Dados'
     TabOrder = 3
     OnClick = Button2Click
   end
@@ -57,8 +59,17 @@ object Form1: TForm1
     Top = 256
     Width = 75
     Height = 25
-    Caption = 'Button3'
+    Caption = 'BD'
     TabOrder = 5
     OnClick = Button3Click
+  end
+  object Button4: TButton
+    Left = 382
+    Top = 256
+    Width = 75
+    Height = 25
+    Caption = 'Button4'
+    TabOrder = 6
+    OnClick = Button4Click
   end
 end
