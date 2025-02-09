@@ -52,7 +52,7 @@ end;
 
 procedure TForm1.Button3Click(Sender: TObject);
 begin
-  TLogMonitor.WriteLot('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Inicio consulta');
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Inicio consulta');
   DMApp.FDQuery1.Close;
   DMApp.FDQuery1.SQL.Clear;
   DMApp.FDQuery1.SQL.Add('SELECT * FROM cliente');
@@ -64,7 +64,7 @@ begin
     Memo1.Lines.Add(DMApp.FDQuery1.FieldByName('nome').AsString);
     DMApp.FDQuery1.Next;
   end;
-  TLogMonitor.WriteLot('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Fechanco consulta');
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Fechanco consulta');
 
 end;
 

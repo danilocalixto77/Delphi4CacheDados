@@ -30,13 +30,11 @@ Instalar os SQLite
 
 **Dicas de Monitoramento**
 
-1 - Logs
+Criação de log no projeto.
 
-Seguir
-minuto 28 em diante para finalizar... ajuste do monitoramento de log
+## 3 - Aprofundando-se no LocalCache4D: Recursos Avançados
 
-
-
+#### 3.1 - Explorando Recursos Avançados do LocalCache4D
 
 
 
@@ -44,3 +42,8 @@ minuto 28 em diante para finalizar... ajuste do monitoramento de log
 
 
 
+
+
+## 6 - Considerações
+
+#### 6.1 - Agradecimentos e Dicas
