@@ -13,7 +13,7 @@ uses
   Vcl.Forms,
   Vcl.Dialogs,
   LocalCache4d,
-  Vcl.StdCtrls;
+  Vcl.StdCtrls, Vcl.ExtCtrls;
 
 type
   TForm1 = class(TForm)
@@ -23,13 +23,18 @@ type
     Button2: TButton;
     Memo1: TMemo;
     Button3: TButton;
+    Panel1: TPanel;
     Button4: TButton;
+    Button5: TButton;
+    Button6: TButton;
+    Button7: TButton;
     procedure Button2Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -66,7 +71,7 @@ begin
   DMApp.FDQuery1.First;
   while not(DMApp.FDQuery1.Eof) do
   begin
-    Memo1.Lines.Add(DMApp.FDQuery1.FieldByName('nome').AsString);
+    Memo1.Lines.Add(DMApp.FDQuery1.FieldByName('nome').AsString+' - '+DMApp.FDQuery1.FieldByName('sexo').AsString);
     DMApp.FDQuery1.Next;
   end;
   TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Fechanco consulta');
@@ -78,6 +83,30 @@ begin
   TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Inicio Cache em disco');
   ShowMessage(LocalCache.Instance('cachededados').GetItem(Edit1.Text));
   TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Final Cache em disco');
+end;
+
+procedure TForm1.Button5Click(Sender: TObject);
+begin
+  DMApp.FDQuery1.Close;
+  DMApp.FDQuery1.SQL.Clear;
+  DMApp.FDQuery1.SQL.Add('SELECT * FROM cliente');
+  DMApp.FDQuery1.Open;
+
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Gravando no Cache 1');
+  DMApp.FDQuery1.First;
+  while not(DMApp.FDQuery1.Eof) do
+  begin
+    LocalCache.Instance('cliente')
+      .SetItem(DMApp.FDQuery1.FieldByName('codigo').AsInteger.ToString,
+      DMApp.FDQuery1.FieldByName('nome').AsString+'|'+
+      DMApp.FDQuery1.FieldByName('ano').AsInteger.ToString+'|'+
+      DMApp.FDQuery1.FieldByName('endereco').AsString+'|'+
+      DMApp.FDQuery1.FieldByName('bairro').AsString+'|'+
+      DMApp.FDQuery1.FieldByName('cidade').AsString+'|'+
+      DMApp.FDQuery1.FieldByName('sexo').AsString);
+    DMApp.FDQuery1.Next;
+  end;
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Gravando no Cache 2');
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);

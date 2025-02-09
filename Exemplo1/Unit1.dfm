@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 353
-  ClientWidth = 500
+  ClientHeight = 343
+  ClientWidth = 675
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -63,13 +63,66 @@ object Form1: TForm1
     TabOrder = 5
     OnClick = Button3Click
   end
-  object Button4: TButton
-    Left = 382
-    Top = 256
-    Width = 75
-    Height = 25
-    Caption = 'Button4'
+  object Panel1: TPanel
+    Left = 522
+    Top = 0
+    Width = 153
+    Height = 343
+    Align = alRight
+    BevelOuter = bvNone
     TabOrder = 6
-    OnClick = Button4Click
+    ExplicitLeft = 520
+    ExplicitTop = -2
+    ExplicitHeight = 337
+    object Button4: TButton
+      AlignWithMargins = True
+      Left = 3
+      Top = 3
+      Width = 147
+      Height = 39
+      Align = alTop
+      Caption = 'Busca 1'
+      TabOrder = 0
+      OnClick = Button4Click
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 153
+    end
+    object Button5: TButton
+      AlignWithMargins = True
+      Left = 3
+      Top = 48
+      Width = 147
+      Height = 39
+      Align = alTop
+      Caption = 'Gravar Cache'
+      TabOrder = 1
+      OnClick = Button5Click
+      ExplicitTop = 106
+    end
+    object Button6: TButton
+      AlignWithMargins = True
+      Left = 3
+      Top = 93
+      Width = 147
+      Height = 39
+      Align = alTop
+      Caption = 'Validar Dados'
+      TabOrder = 2
+      ExplicitLeft = 19
+      ExplicitTop = 136
+    end
+    object Button7: TButton
+      AlignWithMargins = True
+      Left = 3
+      Top = 138
+      Width = 147
+      Height = 39
+      Align = alTop
+      Caption = 'Button4'
+      TabOrder = 3
+      ExplicitLeft = 11
+      ExplicitTop = 194
+    end
   end
 end
