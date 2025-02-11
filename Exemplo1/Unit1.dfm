@@ -71,9 +71,8 @@ object Form1: TForm1
     Align = alRight
     BevelOuter = bvNone
     TabOrder = 6
-    ExplicitLeft = 520
-    ExplicitTop = -2
-    ExplicitHeight = 337
+    ExplicitLeft = 518
+    ExplicitHeight = 342
     object Button4: TButton
       AlignWithMargins = True
       Left = 3
@@ -84,9 +83,6 @@ object Form1: TForm1
       Caption = 'Busca 1'
       TabOrder = 0
       OnClick = Button4Click
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 153
     end
     object Button5: TButton
       AlignWithMargins = True
@@ -98,7 +94,6 @@ object Form1: TForm1
       Caption = 'Gravar Cache'
       TabOrder = 1
       OnClick = Button5Click
-      ExplicitTop = 106
     end
     object Button6: TButton
       AlignWithMargins = True
@@ -109,8 +104,7 @@ object Form1: TForm1
       Align = alTop
       Caption = 'Validar Dados'
       TabOrder = 2
-      ExplicitLeft = 19
-      ExplicitTop = 136
+      OnClick = Button6Click
     end
     object Button7: TButton
       AlignWithMargins = True
@@ -121,8 +115,6 @@ object Form1: TForm1
       Align = alTop
       Caption = 'Button4'
       TabOrder = 3
-      ExplicitLeft = 11
-      ExplicitTop = 194
     end
   end
 end

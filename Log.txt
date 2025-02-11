@@ -9,3 +9,6 @@
 09-02-2025 07:59:17 - Fechanco consulta
 09-02-2025 08:08:04 - Gravando no Cache 1
 09-02-2025 08:08:04 - Gravando no Cache 2
+10-02-2025 23:38:07 - Inicio Cache em disco
+10-02-2025 23:38:22 - Inicio consulta
+10-02-2025 23:38:22 - Fechanco consulta

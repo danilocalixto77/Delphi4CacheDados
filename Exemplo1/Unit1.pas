@@ -35,6 +35,7 @@ type
     procedure FormDestroy(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -107,6 +108,18 @@ begin
     DMApp.FDQuery1.Next;
   end;
   TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Gravando no Cache 2');
+end;
+
+procedure TForm1.Button6Click(Sender: TObject);
+begin
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Inicio validação');
+  var lLista := LocalCache.Instance('cliente').ListItens;
+
+  for var I in lLista.Keys do
+    Memo1.Lines.Add(lLista.Items[I]);
+
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Final validação');
+
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
