@@ -39,7 +39,15 @@ Criação de log no projeto.
 
 #### 3.2 - Cache Distriuído com LocalCache4D
 
+#### 3.3 - Otimização de Grandes Conjuntos de Dados
 
+Baixar componente para utilização de JSONs.
+
+[Github DataSet Serialize](https://github.com/viniciussanchez/dataset-serialize)
+
+Instalar via boss.
+
+        boss i https://github.com/viniciussanchez/dataset-serialize
 
 
 
