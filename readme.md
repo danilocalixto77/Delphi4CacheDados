@@ -39,7 +39,6 @@ Criação de log no projeto.
 
 #### 3.2 - Cache Distriuído com LocalCache4D
 
-        Minuto 7:35
 
 
 
