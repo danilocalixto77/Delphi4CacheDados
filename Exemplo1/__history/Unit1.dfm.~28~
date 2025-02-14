@@ -80,7 +80,7 @@ object Form1: TForm1
       Width = 147
       Height = 39
       Align = alTop
-      Caption = 'Busca 1'
+      Caption = 'Buscar 1'
       TabOrder = 0
       OnClick = Button4Click
     end
@@ -113,8 +113,32 @@ object Form1: TForm1
       Width = 147
       Height = 39
       Align = alTop
-      Caption = 'Button4'
+      Caption = 'Carregar JSON'
       TabOrder = 3
+      OnClick = Button7Click
+    end
+    object Button8: TButton
+      AlignWithMargins = True
+      Left = 3
+      Top = 183
+      Width = 147
+      Height = 39
+      Align = alTop
+      Caption = 'Validar JSON'
+      TabOrder = 4
+      OnClick = Button8Click
+    end
+    object Button9: TButton
+      AlignWithMargins = True
+      Left = 3
+      Top = 228
+      Width = 147
+      Height = 39
+      Align = alTop
+      Caption = 'Remover Inst'#226'ncia'
+      TabOrder = 5
+      OnClick = Button8Click
+      ExplicitLeft = 4
     end
   end
 end

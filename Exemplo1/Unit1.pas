@@ -31,6 +31,9 @@ type
     Button6: TButton;
     Button7: TButton;
     Button8: TButton;
+    Button9: TButton;
+    Button10: TButton;
+    Button11: TButton;
     procedure Button2Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -41,6 +44,9 @@ type
     procedure Button6Click(Sender: TObject);
     procedure Button7Click(Sender: TObject);
     procedure Button8Click(Sender: TObject);
+    procedure Button9Click(Sender: TObject);
+    procedure Button10Click(Sender: TObject);
+    procedure Button11Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -55,6 +61,30 @@ implementation
 {$R *.dfm}
 
 uses Data.Module, Log.Monitor;
+
+procedure TForm1.Button10Click(Sender: TObject);
+begin
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Inicio Remove Item');
+  LocalCache.RemoveItem(Edit1.Text);
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Final Remove Item');
+end;
+
+procedure TForm1.Button11Click(Sender: TObject);
+begin
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Lista Instancia');
+  var lLista := LocalCache.ListInstances;
+  for var I  in lLista.Keys do
+  begin
+    var lSubLista := lLista.Items[I];
+    Memo1.Lines.Add(I);
+    for var J in lSubLista.Keys do
+      Memo1.Lines.Add('        '+lSubLista.Items[J]);
+
+
+
+  end;
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Final Instancia');
+end;
 
 procedure TForm1.Button1Click(Sender: TObject);
 begin
@@ -152,6 +182,13 @@ begin
 
   TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Final validação JSON');
 
+end;
+
+procedure TForm1.Button9Click(Sender: TObject);
+begin
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Inicio Remove Instancia');
+  LocalCache.RemoveInstance('cliente_json');
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Final Remove Instancia');
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);

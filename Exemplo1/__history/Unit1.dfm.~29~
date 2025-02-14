@@ -71,9 +71,8 @@ object Form1: TForm1
     Align = alRight
     BevelOuter = bvNone
     TabOrder = 6
-    ExplicitLeft = 520
-    ExplicitTop = -2
-    ExplicitHeight = 337
+    ExplicitLeft = 518
+    ExplicitHeight = 342
     object Button4: TButton
       AlignWithMargins = True
       Left = 3
@@ -81,12 +80,9 @@ object Form1: TForm1
       Width = 147
       Height = 39
       Align = alTop
-      Caption = 'Busca 1'
+      Caption = 'Buscar 1'
       TabOrder = 0
       OnClick = Button4Click
-      ExplicitLeft = 0
-      ExplicitTop = 0
-      ExplicitWidth = 153
     end
     object Button5: TButton
       AlignWithMargins = True
@@ -98,7 +94,6 @@ object Form1: TForm1
       Caption = 'Gravar Cache'
       TabOrder = 1
       OnClick = Button5Click
-      ExplicitTop = 106
     end
     object Button6: TButton
       AlignWithMargins = True
@@ -109,8 +104,7 @@ object Form1: TForm1
       Align = alTop
       Caption = 'Validar Dados'
       TabOrder = 2
-      ExplicitLeft = 19
-      ExplicitTop = 136
+      OnClick = Button6Click
     end
     object Button7: TButton
       AlignWithMargins = True
@@ -119,10 +113,32 @@ object Form1: TForm1
       Width = 147
       Height = 39
       Align = alTop
-      Caption = 'Button4'
+      Caption = 'Carregar JSON'
       TabOrder = 3
-      ExplicitLeft = 11
-      ExplicitTop = 194
+      OnClick = Button7Click
+    end
+    object Button8: TButton
+      AlignWithMargins = True
+      Left = 3
+      Top = 183
+      Width = 147
+      Height = 39
+      Align = alTop
+      Caption = 'Validar JSON'
+      TabOrder = 4
+      OnClick = Button8Click
+    end
+    object Button9: TButton
+      AlignWithMargins = True
+      Left = 3
+      Top = 228
+      Width = 147
+      Height = 39
+      Align = alTop
+      Caption = 'Remover Inst'#226'ncia'
+      TabOrder = 5
+      OnClick = Button9Click
+      ExplicitLeft = 4
     end
   end
 end

@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 343
+  ClientHeight = 434
   ClientWidth = 675
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -67,7 +67,7 @@ object Form1: TForm1
     Left = 522
     Top = 0
     Width = 153
-    Height = 343
+    Height = 434
     Align = alRight
     BevelOuter = bvNone
     TabOrder = 6
@@ -80,7 +80,7 @@ object Form1: TForm1
       Width = 147
       Height = 39
       Align = alTop
-      Caption = 'Busca 1'
+      Caption = 'Buscar 1'
       TabOrder = 0
       OnClick = Button4Click
     end
@@ -113,7 +113,7 @@ object Form1: TForm1
       Width = 147
       Height = 39
       Align = alTop
-      Caption = 'Carrega JSON'
+      Caption = 'Carregar JSON'
       TabOrder = 3
       OnClick = Button7Click
     end
@@ -124,11 +124,45 @@ object Form1: TForm1
       Width = 147
       Height = 39
       Align = alTop
-      Caption = 'Valida JSON'
+      Caption = 'Validar JSON'
       TabOrder = 4
       OnClick = Button8Click
-      ExplicitLeft = 19
-      ExplicitTop = 228
+    end
+    object Button9: TButton
+      AlignWithMargins = True
+      Left = 3
+      Top = 228
+      Width = 147
+      Height = 39
+      Align = alTop
+      Caption = 'Remover Inst'#226'ncia'
+      TabOrder = 5
+      OnClick = Button9Click
+      ExplicitLeft = 4
+    end
+    object Button10: TButton
+      AlignWithMargins = True
+      Left = 3
+      Top = 273
+      Width = 147
+      Height = 39
+      Align = alTop
+      Caption = 'Remover Item'
+      TabOrder = 6
+      OnClick = Button10Click
+      ExplicitTop = 304
+    end
+    object Button11: TButton
+      AlignWithMargins = True
+      Left = 3
+      Top = 318
+      Width = 147
+      Height = 39
+      Align = alTop
+      Caption = 'Listar Inst'#226'ncias'
+      TabOrder = 7
+      OnClick = Button11Click
+      ExplicitTop = 377
     end
   end
 end

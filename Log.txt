@@ -40,3 +40,30 @@
 13-02-2025 23:10:37 - Inicio Carrega JSON
 13-02-2025 23:13:41 - Inicio validação JSON
 13-02-2025 23:13:41 - Final validação JSON
+14-02-2025 18:18:30 - Lista Instancia
+14-02-2025 18:18:30 - Final Instancia
+14-02-2025 18:19:31 - Inicio Remove Instancia
+14-02-2025 18:19:31 - Final Remove Instancia
+14-02-2025 18:19:38 - Inicio Carrega JSON
+14-02-2025 18:19:38 - Inicio Carrega JSON
+14-02-2025 18:19:38 - Inicio Carrega JSON
+14-02-2025 18:19:38 - Inicio Carrega JSON
+14-02-2025 18:19:38 - Inicio Carrega JSON
+14-02-2025 18:19:38 - Inicio Carrega JSON
+14-02-2025 18:19:38 - Finaliza Carrega JSON
+14-02-2025 18:19:44 - Inicio Carrega JSON
+14-02-2025 18:19:44 - Inicio Carrega JSON
+14-02-2025 18:19:44 - Inicio Carrega JSON
+14-02-2025 18:19:44 - Inicio Carrega JSON
+14-02-2025 18:19:44 - Inicio Carrega JSON
+14-02-2025 18:19:44 - Inicio Carrega JSON
+14-02-2025 18:19:44 - Finaliza Carrega JSON
+14-02-2025 18:19:46 - Inicio Carrega JSON
+14-02-2025 18:19:46 - Inicio Carrega JSON
+14-02-2025 18:19:46 - Inicio Carrega JSON
+14-02-2025 18:19:46 - Inicio Carrega JSON
+14-02-2025 18:19:46 - Inicio Carrega JSON
+14-02-2025 18:19:46 - Inicio Carrega JSON
+14-02-2025 18:19:46 - Finaliza Carrega JSON
+14-02-2025 18:19:48 - Inicio validação JSON
+14-02-2025 18:19:48 - Final validação JSON

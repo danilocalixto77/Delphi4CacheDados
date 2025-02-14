@@ -30,6 +30,10 @@ type
     Button5: TButton;
     Button6: TButton;
     Button7: TButton;
+    Button8: TButton;
+    Button9: TButton;
+    Button10: TButton;
+    Button11: TButton;
     procedure Button2Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -39,6 +43,9 @@ type
     procedure Button5Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
     procedure Button7Click(Sender: TObject);
+    procedure Button8Click(Sender: TObject);
+    procedure Button9Click(Sender: TObject);
+    procedure Button10Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -53,6 +60,13 @@ implementation
 {$R *.dfm}
 
 uses Data.Module, Log.Monitor;
+
+procedure TForm1.Button10Click(Sender: TObject);
+begin
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Inicio Remove Instancia');
+  LocalCache.RemoveItem(Edit1.Text);
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Final Remove Instancia');
+end;
 
 procedure TForm1.Button1Click(Sender: TObject);
 begin
@@ -127,12 +141,36 @@ end;
 
 procedure TForm1.Button7Click(Sender: TObject);
 begin
-  DMApp.FDQuery1.Close;
-  DMApp.FDQuery1.SQL.Clear;
-  DMApp.FDQuery1.SQL.Add('SELECT * FROM cliente');
-  DMApp.FDQuery1.Open;
+  DMApp.FDQuery1.First;
+  while not(DMApp.FDQuery1.Eof) do
+  begin
+    TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Inicio Carrega JSON');
+    LocalCache.Instance('cliente_json')
+    .SetItem(DMApp.FDQuery1.FieldByName('codigo').AsInteger.ToString,
+    DMApp.FDQuery1.ToJSONObject.ToString);
+    DMApp.FDQuery1.Next;
+  end;
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Finaliza Carrega JSON');
 
+end;
 
+procedure TForm1.Button8Click(Sender: TObject);
+begin
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Inicio validação JSON');
+  var lLista := LocalCache.Instance('cliente_json').ListItens;
+
+  for var I in lLista.Keys do
+    Memo1.Lines.Add(lLista.Items[I]);
+
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Final validação JSON');
+
+end;
+
+procedure TForm1.Button9Click(Sender: TObject);
+begin
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Inicio Remove Instancia');
+  LocalCache.RemoveInstance('cliente_json');
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Final Remove Instancia');
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);

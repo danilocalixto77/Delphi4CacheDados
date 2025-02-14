@@ -50,6 +50,13 @@ Instalar via boss.
         boss i https://github.com/viniciussanchez/dataset-serialize
 
 
+## 4 - Resolução de Problemas e Desafio Comuns
+
+#### 4.1 - Identificação e Solução de Problemas de Cache (Proxima Aula)
+
+
+
+
 
 ## 6 - Considerações
 
