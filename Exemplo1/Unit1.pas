@@ -13,7 +13,9 @@ uses
   Vcl.Forms,
   Vcl.Dialogs,
   LocalCache4d,
-  Vcl.StdCtrls, Vcl.ExtCtrls;
+  Vcl.StdCtrls,
+  Vcl.ExtCtrls,
+  DataSet.Serialize;
 
 type
   TForm1 = class(TForm)
@@ -28,6 +30,7 @@ type
     Button5: TButton;
     Button6: TButton;
     Button7: TButton;
+    Button8: TButton;
     procedure Button2Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -36,6 +39,8 @@ type
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
+    procedure Button7Click(Sender: TObject);
+    procedure Button8Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -119,6 +124,33 @@ begin
     Memo1.Lines.Add(lLista.Items[I]);
 
   TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Final validação');
+
+end;
+
+procedure TForm1.Button7Click(Sender: TObject);
+begin
+  DMApp.FDQuery1.First;
+  while not(DMApp.FDQuery1.Eof) do
+  begin
+    TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Inicio Carrega JSON');
+    LocalCache.Instance('cliente_json')
+    .SetItem(DMApp.FDQuery1.FieldByName('codigo').AsInteger.ToString,
+    DMApp.FDQuery1.ToJSONObject.ToString);
+    DMApp.FDQuery1.Next;
+  end;
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Finaliza Carrega JSON');
+
+end;
+
+procedure TForm1.Button8Click(Sender: TObject);
+begin
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Inicio validação JSON');
+  var lLista := LocalCache.Instance('cliente_json').ListItens;
+
+  for var I in lLista.Keys do
+    Memo1.Lines.Add(lLista.Items[I]);
+
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Final validação JSON');
 
 end;
 

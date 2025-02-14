@@ -1,0 +1,173 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows,
+  Winapi.Messages,
+  System.SysUtils,
+  System.Variants,
+  System.Classes,
+  Vcl.Graphics,
+  Vcl.Controls,
+  Vcl.Forms,
+  Vcl.Dialogs,
+  LocalCache4d,
+  Vcl.StdCtrls,
+  Vcl.ExtCtrls,
+  DataSet.Serialize;
+
+type
+  TForm1 = class(TForm)
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Button1: TButton;
+    Button2: TButton;
+    Memo1: TMemo;
+    Button3: TButton;
+    Panel1: TPanel;
+    Button4: TButton;
+    Button5: TButton;
+    Button6: TButton;
+    Button7: TButton;
+    Button8: TButton;
+    procedure Button2Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormDestroy(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
+    procedure Button7Click(Sender: TObject);
+    procedure Button8Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+uses Data.Module, Log.Monitor;
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+  LocalCache.Instance('cachededados').SetItem(Edit1.Text, Edit2.Text) ;
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+  Memo1.Lines.Add(LocalCache.Instance('cachededados').GetItem(Edit1.Text));
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Inicio consulta');
+  DMApp.FDQuery1.Close;
+  DMApp.FDQuery1.SQL.Clear;
+  DMApp.FDQuery1.SQL.Add('SELECT * FROM cliente');
+  DMApp.FDQuery1.Open;
+
+  DMApp.FDQuery1.First;
+  while not(DMApp.FDQuery1.Eof) do
+  begin
+    Memo1.Lines.Add(DMApp.FDQuery1.FieldByName('nome').AsString+' - '+DMApp.FDQuery1.FieldByName('sexo').AsString);
+    DMApp.FDQuery1.Next;
+  end;
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Fechanco consulta');
+
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);
+begin
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Inicio Cache em disco');
+  ShowMessage(LocalCache.Instance('cachededados').GetItem(Edit1.Text));
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Final Cache em disco');
+end;
+
+procedure TForm1.Button5Click(Sender: TObject);
+begin
+  DMApp.FDQuery1.Close;
+  DMApp.FDQuery1.SQL.Clear;
+  DMApp.FDQuery1.SQL.Add('SELECT * FROM cliente');
+  DMApp.FDQuery1.Open;
+
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Gravando no Cache 1');
+  DMApp.FDQuery1.First;
+  while not(DMApp.FDQuery1.Eof) do
+  begin
+    LocalCache.Instance('cliente')
+      .SetItem(DMApp.FDQuery1.FieldByName('codigo').AsInteger.ToString,
+      DMApp.FDQuery1.FieldByName('nome').AsString+'|'+
+      DMApp.FDQuery1.FieldByName('ano').AsInteger.ToString+'|'+
+      DMApp.FDQuery1.FieldByName('endereco').AsString+'|'+
+      DMApp.FDQuery1.FieldByName('bairro').AsString+'|'+
+      DMApp.FDQuery1.FieldByName('cidade').AsString+'|'+
+      DMApp.FDQuery1.FieldByName('sexo').AsString);
+    DMApp.FDQuery1.Next;
+  end;
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Gravando no Cache 2');
+end;
+
+procedure TForm1.Button6Click(Sender: TObject);
+begin
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Inicio validação');
+  var lLista := LocalCache.Instance('cliente').ListItens;
+
+  for var I in lLista.Keys do
+    Memo1.Lines.Add(lLista.Items[I]);
+
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Final validação');
+
+end;
+
+procedure TForm1.Button7Click(Sender: TObject);
+begin
+  while not(DMApp.FDQuery1.Eof) do
+  begin
+    TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Inicio Carrega JSON');
+    LocalCache.Instance('cliente_json')
+    .SetItem(DMApp.FDQuery1.FieldByName('codigo').AsInteger.ToString,
+    DMApp.FDQuery1.ToJSONObject.ToString);
+    DMApp.FDQuery1.Next;
+  end;
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Finaliza Carrega JSON');
+
+end;
+
+procedure TForm1.Button8Click(Sender: TObject);
+begin
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Inicio validação JSON');
+  var lLista := LocalCache.Instance('cliente_json').ListItens;
+
+  for var I in lLista.Keys do
+    Memo1.Lines.Add(lLista.Items[I]);
+
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Final validação JSON');
+
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  if not FileExists(ExtractFilePath(ParamStr(0))+'cache.lc4') then
+  begin
+    LocalCache.SaveToStorage('cache.lc4');
+    Exit;
+  end;
+  LocalCache.LoadDatabase('cache.lc4');
+
+
+end;
+
+procedure TForm1.FormDestroy(Sender: TObject);
+begin
+  LocalCache.SaveToStorage('cache.lc4');
+end;
+
+end.

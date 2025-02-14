@@ -34,3 +34,9 @@
 12-02-2025 18:58:42 - Gravando no Cache 2
 12-02-2025 18:58:45 - Inicio validação
 12-02-2025 18:58:45 - Final validação
+13-02-2025 23:10:26 - Inicio Carrega JSON
+13-02-2025 23:10:26 - Inicio Carrega JSON
+13-02-2025 23:10:37 - Inicio Carrega JSON
+13-02-2025 23:10:37 - Inicio Carrega JSON
+13-02-2025 23:13:41 - Inicio validação JSON
+13-02-2025 23:13:41 - Final validação JSON

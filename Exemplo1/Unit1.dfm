@@ -113,8 +113,22 @@ object Form1: TForm1
       Width = 147
       Height = 39
       Align = alTop
-      Caption = 'Button4'
+      Caption = 'Carrega JSON'
       TabOrder = 3
+      OnClick = Button7Click
+    end
+    object Button8: TButton
+      AlignWithMargins = True
+      Left = 3
+      Top = 183
+      Width = 147
+      Height = 39
+      Align = alTop
+      Caption = 'Valida JSON'
+      TabOrder = 4
+      OnClick = Button8Click
+      ExplicitLeft = 19
+      ExplicitTop = 228
     end
   end
 end
