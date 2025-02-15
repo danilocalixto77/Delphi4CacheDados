@@ -52,7 +52,11 @@ Instalar via boss.
 
 ## 4 - Resolução de Problemas e Desafio Comuns
 
-#### 4.1 - Identificação e Solução de Problemas de Cache (Proxima Aula)
+#### 4.1 - Identificação e Solução de Problemas de Cache
+
+#### 4.2 - Resolvendo Problemas de Sgurança
+
+
 
 
 
