@@ -56,9 +56,7 @@ Instalar via boss.
 
 #### 4.2 - Resolvendo Problemas de Sgurança
 
-Rever aula, para digitar código do ínicio....
-
-
+....
 
 
 
