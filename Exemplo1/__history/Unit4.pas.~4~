@@ -84,7 +84,6 @@ function TConfiguracao.SetDataBase(Value: String): TConfiguracao;
 begin
   Result := Self;
   FArquivo.WriteString(SECAOCONF,'DATABASE',Value);
-  LocalCache.Instance('config').SetItem('database',Value);
 end;
 
 function TConfiguracao.SetDriveID(Value: String): TConfiguracao;
