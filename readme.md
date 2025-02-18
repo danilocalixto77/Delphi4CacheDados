@@ -56,6 +56,10 @@ Instalar via boss.
 
 #### 4.2 - Resolvendo Problemas de Sgurança
 
+## 5 - Implementando Estratégias Avançadas de Cache em Projetos Delphi
+
+#### 5.1 - Cache de Páginas e Componentes Visuais
+
 
 
 ## 6 - Considerações

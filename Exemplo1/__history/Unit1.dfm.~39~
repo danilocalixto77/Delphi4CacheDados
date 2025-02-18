@@ -1,0 +1,195 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 434
+  ClientWidth = 675
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  TextHeight = 15
+  object Edit1: TEdit
+    Left = 24
+    Top = 16
+    Width = 121
+    Height = 23
+    TabOrder = 0
+    Text = 'Edit1'
+  end
+  object Edit2: TEdit
+    Left = 192
+    Top = 16
+    Width = 265
+    Height = 23
+    TabOrder = 1
+    Text = 'Edit1'
+  end
+  object Button1: TButton
+    Left = 24
+    Top = 45
+    Width = 75
+    Height = 25
+    Caption = 'Gravar Dados'
+    TabOrder = 2
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 24
+    Top = 113
+    Width = 75
+    Height = 25
+    Caption = 'Ler Dados'
+    TabOrder = 3
+    OnClick = Button2Click
+  end
+  object Memo1: TMemo
+    Left = 24
+    Top = 144
+    Width = 433
+    Height = 89
+    TabOrder = 4
+  end
+  object Button3: TButton
+    Left = 24
+    Top = 256
+    Width = 75
+    Height = 25
+    Caption = 'BD'
+    TabOrder = 5
+    OnClick = Button3Click
+  end
+  object Panel1: TPanel
+    Left = 522
+    Top = 0
+    Width = 153
+    Height = 434
+    Align = alRight
+    BevelOuter = bvNone
+    TabOrder = 6
+    ExplicitLeft = 518
+    ExplicitHeight = 433
+    object Button4: TButton
+      AlignWithMargins = True
+      Left = 3
+      Top = 3
+      Width = 147
+      Height = 39
+      Align = alTop
+      Caption = 'Buscar 1'
+      TabOrder = 0
+      OnClick = Button4Click
+    end
+    object Button5: TButton
+      AlignWithMargins = True
+      Left = 3
+      Top = 48
+      Width = 147
+      Height = 39
+      Align = alTop
+      Caption = 'Gravar Cache'
+      TabOrder = 1
+      OnClick = Button5Click
+    end
+    object Button6: TButton
+      AlignWithMargins = True
+      Left = 3
+      Top = 93
+      Width = 147
+      Height = 39
+      Align = alTop
+      Caption = 'Validar Dados'
+      TabOrder = 2
+      OnClick = Button6Click
+    end
+    object Button7: TButton
+      AlignWithMargins = True
+      Left = 3
+      Top = 138
+      Width = 147
+      Height = 39
+      Align = alTop
+      Caption = 'Carregar JSON'
+      TabOrder = 3
+      OnClick = Button7Click
+    end
+    object Button8: TButton
+      AlignWithMargins = True
+      Left = 3
+      Top = 183
+      Width = 147
+      Height = 39
+      Align = alTop
+      Caption = 'Validar JSON'
+      TabOrder = 4
+      OnClick = Button8Click
+    end
+    object Button9: TButton
+      AlignWithMargins = True
+      Left = 3
+      Top = 228
+      Width = 147
+      Height = 39
+      Align = alTop
+      Caption = 'Remover Inst'#226'ncia'
+      TabOrder = 5
+      OnClick = Button9Click
+    end
+    object Button10: TButton
+      AlignWithMargins = True
+      Left = 3
+      Top = 273
+      Width = 147
+      Height = 39
+      Align = alTop
+      Caption = 'Remover Item'
+      TabOrder = 6
+      OnClick = Button10Click
+    end
+    object Button11: TButton
+      AlignWithMargins = True
+      Left = 3
+      Top = 318
+      Width = 147
+      Height = 39
+      Align = alTop
+      Caption = 'Listar Inst'#226'ncias'
+      TabOrder = 7
+      OnClick = Button11Click
+    end
+    object Button14: TButton
+      AlignWithMargins = True
+      Left = 3
+      Top = 363
+      Width = 147
+      Height = 39
+      Align = alTop
+      Caption = 'Listar Inst'#226'ncia'
+      TabOrder = 8
+      OnClick = Button11Click
+      ExplicitTop = 382
+    end
+  end
+  object Button12: TButton
+    Left = 24
+    Top = 318
+    Width = 75
+    Height = 25
+    Caption = 'Arquivo'
+    TabOrder = 7
+    OnClick = Button12Click
+  end
+  object Button13: TButton
+    Left = 120
+    Top = 318
+    Width = 75
+    Height = 25
+    Caption = 'Cache'
+    TabOrder = 8
+    OnClick = Button13Click
+  end
+end

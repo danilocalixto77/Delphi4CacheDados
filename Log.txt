@@ -68,3 +68,11 @@
 14-02-2025 18:19:48 - Inicio validação JSON
 14-02-2025 18:19:48 - Final validação JSON
 16-02-2025 00:06:22 - Inicio Cache em disco
+17-02-2025 22:33:35 - Lista Instancia
+17-02-2025 22:33:35 - Final Instancia
+17-02-2025 22:42:46 - Inicio Listar Instancias(n)
+17-02-2025 22:42:46 - Final Listar Instancias(n)
+17-02-2025 22:42:52 - Inicio Listar Instancia(1)
+17-02-2025 22:42:52 - Final Listar Instancia(1)
+17-02-2025 22:45:15 - Inicio Listar Instancias(n)
+17-02-2025 22:45:15 - Final Listar Instancias(n)

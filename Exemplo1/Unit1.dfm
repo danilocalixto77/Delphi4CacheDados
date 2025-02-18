@@ -72,7 +72,7 @@ object Form1: TForm1
     BevelOuter = bvNone
     TabOrder = 6
     ExplicitLeft = 518
-    ExplicitHeight = 342
+    ExplicitHeight = 433
     object Button4: TButton
       AlignWithMargins = True
       Left = 3
@@ -138,7 +138,6 @@ object Form1: TForm1
       Caption = 'Remover Inst'#226'ncia'
       TabOrder = 5
       OnClick = Button9Click
-      ExplicitLeft = 4
     end
     object Button10: TButton
       AlignWithMargins = True
@@ -150,7 +149,6 @@ object Form1: TForm1
       Caption = 'Remover Item'
       TabOrder = 6
       OnClick = Button10Click
-      ExplicitTop = 304
     end
     object Button11: TButton
       AlignWithMargins = True
@@ -162,7 +160,36 @@ object Form1: TForm1
       Caption = 'Listar Inst'#226'ncias'
       TabOrder = 7
       OnClick = Button11Click
-      ExplicitTop = 377
     end
+    object Button14: TButton
+      AlignWithMargins = True
+      Left = 3
+      Top = 363
+      Width = 147
+      Height = 39
+      Align = alTop
+      Caption = 'Listar Inst'#226'ncia'
+      TabOrder = 8
+      OnClick = Button14Click
+      ExplicitTop = 382
+    end
+  end
+  object Button12: TButton
+    Left = 24
+    Top = 318
+    Width = 75
+    Height = 25
+    Caption = 'Arquivo'
+    TabOrder = 7
+    OnClick = Button12Click
+  end
+  object Button13: TButton
+    Left = 120
+    Top = 318
+    Width = 75
+    Height = 25
+    Caption = 'Cache'
+    TabOrder = 8
+    OnClick = Button13Click
   end
 end
