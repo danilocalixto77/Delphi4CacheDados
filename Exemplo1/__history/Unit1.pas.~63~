@@ -36,6 +36,7 @@ type
     Button11: TButton;
     Button12: TButton;
     Button13: TButton;
+    Button14: TButton;
     procedure Button2Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -50,6 +51,8 @@ type
     procedure Button10Click(Sender: TObject);
     procedure Button11Click(Sender: TObject);
     procedure Button12Click(Sender: TObject);
+    procedure Button13Click(Sender: TObject);
+    procedure Button14Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -74,24 +77,53 @@ end;
 
 procedure TForm1.Button11Click(Sender: TObject);
 begin
-  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Lista Instancia');
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Inicio Listar Instancias(n)');
+  var lLista := LocalCache.ListInstances;
+  for var I  in lLista.Keys do
+  begin
+    var lSubLista := lLista.Items[I];
+    if I.Equals('CONFIGURACAO') then
+    begin
+      Memo1.Lines.Add(I);
+      for var J in lSubLista.Keys do
+        Memo1.Lines.Add('        '+lSubLista.Items[J]);
+    end;
+  end;
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Final Listar Instancias(n)');
+end;
+
+procedure TForm1.Button12Click(Sender: TObject);
+begin
+  TConfiguracao
+    .New(ExtractFilePath(ParamStr(0)))
+    .TipoConfiguracao(ARQ)
+    .SetDataBase('arquivo')
+    .SetUserName('danilo')
+    .SetPassWord('123')
+    .SetDriveID('sql');
+end;
+
+procedure TForm1.Button13Click(Sender: TObject);
+begin
+  TConfiguracao
+    .New(ExtractFilePath(ParamStr(0))+'conf.txt')
+    .TipoConfiguracao(CACHE)
+    .SetDataBase('arquivo')
+    .SetUserName('danilo')
+    .SetPassWord('123')
+    .SetDriveID('sql');
+end;
+
+procedure TForm1.Button14Click(Sender: TObject);
+begin
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Inicio Listar Instancia(1)');
   var lLista := LocalCache.ListInstances;
   for var I  in lLista.Keys do
   begin
     var lSubLista := lLista.Items[I];
     Memo1.Lines.Add(I);
-    for var J in lSubLista.Keys do
-      Memo1.Lines.Add('        '+lSubLista.Items[J]);
-
-
-
   end;
-  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Final Instancia');
-end;
-
-procedure TForm1.Button12Click(Sender: TObject);
-begin
-  TConfiguracao.New()
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Final Listar Instancia(1)');
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);

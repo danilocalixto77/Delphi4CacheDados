@@ -60,6 +60,10 @@ Instalar via boss.
 
 #### 5.1 - Cache de Páginas e Componentes Visuais
 
+#### 5.2 - Intgração com Frameworks ORM
+
+        Proxima aula
+
 
 
 ## 6 - Considerações

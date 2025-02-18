@@ -37,6 +37,7 @@ type
     Button12: TButton;
     Button13: TButton;
     Button14: TButton;
+    Button15: TButton;
     procedure Button2Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -53,6 +54,7 @@ type
     procedure Button12Click(Sender: TObject);
     procedure Button13Click(Sender: TObject);
     procedure Button14Click(Sender: TObject);
+    procedure Button15Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -124,6 +126,15 @@ begin
     Memo1.Lines.Add(I);
   end;
   TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Final Listar Instancia(1)');
+end;
+
+procedure TForm1.Button15Click(Sender: TObject);
+begin
+  LocalCache
+    .Instance('style')
+      .SetItem('font','8')
+      .SetItem('Cursor','crHandPoint')
+      .SetItem('color','clGreen');
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);
@@ -239,6 +250,8 @@ begin
     Exit;
   end;
   LocalCache.LoadDatabase('cache.lc4');
+  Self.Font.Size := LocalCache.Instance('style').GetItem('font').ToInteger;
+  Panel1.Color := TColor(LocalCache.Instance('style').GetItem('color'));
 end;
 
 procedure TForm1.FormDestroy(Sender: TObject);

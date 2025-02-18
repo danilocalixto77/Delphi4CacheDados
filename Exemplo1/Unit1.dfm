@@ -171,7 +171,6 @@ object Form1: TForm1
       Caption = 'Listar Inst'#226'ncia'
       TabOrder = 8
       OnClick = Button14Click
-      ExplicitTop = 382
     end
   end
   object Button12: TButton
@@ -191,5 +190,14 @@ object Form1: TForm1
     Caption = 'Cache'
     TabOrder = 8
     OnClick = Button13Click
+  end
+  object Button15: TButton
+    Left = 26
+    Top = 370
+    Width = 169
+    Height = 25
+    Caption = 'Configura'#231#245'es de Layout'
+    TabOrder = 9
+    OnClick = Button15Click
   end
 end
