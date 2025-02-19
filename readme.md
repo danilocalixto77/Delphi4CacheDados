@@ -62,7 +62,9 @@ Instalar via boss.
 
 #### 5.2 - Intgração com Frameworks ORM
 
-        Proxima aula
+        boos i https://github.com/academiadocodigo/simpleorm
+
+
 
 
 
