@@ -7,7 +7,8 @@ uses
   Data.Module in 'Data.Module.pas' {DMApp: TDataModule},
   Log.Monitor in 'Log.Monitor.pas',
   Log.Register in 'Log.Register.pas',
-  Unit4 in 'Unit4.pas';
+  Unit4 in 'Unit4.pas',
+  Unit5 in 'Unit5.pas';
 
 {$R *.res}
 

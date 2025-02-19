@@ -10,6 +10,14 @@
 			"failed": false,
 			"changed": false
 		},
+		"https://github.com/academiadocodigo/simpleorm": {
+			"name": "simpleorm",
+			"version": "2.02.11",
+			"hash": "2863bb98c4844bb06eab96aa858a4e96",
+			"artifacts": {},
+			"failed": false,
+			"changed": false
+		},
 		"https://github.com/viniciussanchez/dataset-serialize": {
 			"name": "dataset-serialize",
 			"version": "v2.5.9",

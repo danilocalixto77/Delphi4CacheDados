@@ -65,6 +65,9 @@ Instalar via boss.
         boos i https://github.com/academiadocodigo/simpleorm
 
 
+1:30 pegar os campos e declarar os atributos na classe no delphi
+
+
 
 
 
