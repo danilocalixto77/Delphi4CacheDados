@@ -1,0 +1,34 @@
+unit Unit5;
+
+interface
+
+uses
+  SimpleAttributes;
+
+type
+  [Tabela('CLIENTE')]
+  TClientes = class
+    private
+    Fbairro: String;
+    Fcodigo: Integer;
+    Fano: Integer;
+    Fnome: String;
+    Fendereco: String;
+    Fcidade: String;
+    Fsexo: String;
+      property codigo: Integer read Fcodigo write Fcodigo;
+      property nome: String read Fnome write Fnome;
+      property ano: Integer read Fano write Fano;
+      property endereco: String read Fendereco write Fendereco;
+      property bairro: String read Fbairro write Fbairro;
+      property cidade: String read Fcidade write Fcidade;
+      property sexo: String read Fsexo write Fsexo;
+
+
+    public
+  end;
+
+
+implementation
+
+end.
