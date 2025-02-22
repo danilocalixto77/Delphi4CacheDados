@@ -55,8 +55,8 @@ object Form1: TForm1
     TabOrder = 4
   end
   object Button3: TButton
-    Left = 24
-    Top = 256
+    Left = 26
+    Top = 239
     Width = 75
     Height = 25
     Caption = 'BD'
@@ -175,7 +175,7 @@ object Form1: TForm1
   end
   object Button12: TButton
     Left = 24
-    Top = 318
+    Top = 270
     Width = 75
     Height = 25
     Caption = 'Arquivo'
@@ -184,7 +184,7 @@ object Form1: TForm1
   end
   object Button13: TButton
     Left = 120
-    Top = 318
+    Top = 270
     Width = 75
     Height = 25
     Caption = 'Cache'
@@ -192,12 +192,30 @@ object Form1: TForm1
     OnClick = Button13Click
   end
   object Button15: TButton
-    Left = 26
-    Top = 370
+    Left = 207
+    Top = 270
     Width = 169
     Height = 25
     Caption = 'Configura'#231#245'es de Layout'
     TabOrder = 9
     OnClick = Button15Click
+  end
+  object Button16: TButton
+    Left = 382
+    Top = 270
+    Width = 75
+    Height = 25
+    Caption = 'Persist'#234'ncia'
+    TabOrder = 10
+    OnClick = Button16Click
+  end
+  object Memo2: TMemo
+    Left = 26
+    Top = 301
+    Width = 431
+    Height = 89
+    Lines.Strings = (
+      '')
+    TabOrder = 11
   end
 end

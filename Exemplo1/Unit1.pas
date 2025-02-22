@@ -15,7 +15,9 @@ uses
   LocalCache4d,
   Vcl.StdCtrls,
   Vcl.ExtCtrls,
-  DataSet.Serialize;
+  DataSet.Serialize, FireDAC.Phys.SQLiteWrapper.Stat, SimpleQueryFiredac, SimpleDAO, SimpleInterface,
+  SimpleDAOSQLAttribute,
+  System.Generics.Collections;
 
 type
   TForm1 = class(TForm)
@@ -38,6 +40,8 @@ type
     Button13: TButton;
     Button14: TButton;
     Button15: TButton;
+    Button16: TButton;
+    Memo2: TMemo;
     procedure Button2Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -55,6 +59,7 @@ type
     procedure Button13Click(Sender: TObject);
     procedure Button14Click(Sender: TObject);
     procedure Button15Click(Sender: TObject);
+    procedure Button16Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -68,7 +73,7 @@ implementation
 
 {$R *.dfm}
 
-uses Data.Module, Log.Monitor, Unit4;
+uses Data.Module, Log.Monitor, Unit4, Cliente;
 
 procedure TForm1.Button10Click(Sender: TObject);
 begin
@@ -135,6 +140,32 @@ begin
       .SetItem('font','8')
       .SetItem('Cursor','crHandPoint')
       .SetItem('color','clGreen');
+end;
+
+procedure TForm1.Button16Click(Sender: TObject);
+begin
+  var Conn := TSimpleQUeryFiredac.New(DMApp.FDConnection1);
+  var DAO  := iSimpleDAO<TClientes>.New(Conn);   //TODO PROBLEMA BASE
+
+  var lLista := TObjectList<TClientes>.Create;
+  DAO.Find(lLista);
+
+  for var I in lLista do
+    Memo1.Lines.Add(I.CODIGO.ToString + ' - ' + I.NOME);
+
+    var lCliente := TClientes.Create;
+    lCliente.CODIGO := 100;
+  LocalCache.Instance('CONFIGURACAO').GetItem('DATABASE');
+
+  DAO.Insert(lCliente);
+
+  var lNovo := TObjectList<TClientes>.Create;
+  DAO.FInd(lNovo);
+
+  for var I in lNovo do
+    Memo2.Lines.Add(I.CODIGO.ToString + ' - ' + I.NOME);
+
+
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);

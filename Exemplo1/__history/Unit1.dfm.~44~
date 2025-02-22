@@ -161,5 +161,52 @@ object Form1: TForm1
       TabOrder = 7
       OnClick = Button11Click
     end
+    object Button14: TButton
+      AlignWithMargins = True
+      Left = 3
+      Top = 363
+      Width = 147
+      Height = 39
+      Align = alTop
+      Caption = 'Listar Inst'#226'ncia'
+      TabOrder = 8
+      OnClick = Button14Click
+    end
+  end
+  object Button12: TButton
+    Left = 24
+    Top = 318
+    Width = 75
+    Height = 25
+    Caption = 'Arquivo'
+    TabOrder = 7
+    OnClick = Button12Click
+  end
+  object Button13: TButton
+    Left = 120
+    Top = 318
+    Width = 75
+    Height = 25
+    Caption = 'Cache'
+    TabOrder = 8
+    OnClick = Button13Click
+  end
+  object Button15: TButton
+    Left = 26
+    Top = 370
+    Width = 169
+    Height = 25
+    Caption = 'Configura'#231#245'es de Layout'
+    TabOrder = 9
+    OnClick = Button15Click
+  end
+  object Button16: TButton
+    Left = 382
+    Top = 256
+    Width = 75
+    Height = 25
+    Caption = 'Persist'#234'ncia'
+    TabOrder = 10
+    OnClick = Button16Click
   end
 end

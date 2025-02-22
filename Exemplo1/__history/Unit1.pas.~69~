@@ -15,7 +15,7 @@ uses
   LocalCache4d,
   Vcl.StdCtrls,
   Vcl.ExtCtrls,
-  DataSet.Serialize;
+  DataSet.Serialize, FireDAC.Phys.SQLiteWrapper.Stat, SimpleQueryFiredac, SimpleDAO, SimpleInterface;
 
 type
   TForm1 = class(TForm)
@@ -37,6 +37,8 @@ type
     Button12: TButton;
     Button13: TButton;
     Button14: TButton;
+    Button15: TButton;
+    Button16: TButton;
     procedure Button2Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -52,6 +54,9 @@ type
     procedure Button11Click(Sender: TObject);
     procedure Button12Click(Sender: TObject);
     procedure Button13Click(Sender: TObject);
+    procedure Button14Click(Sender: TObject);
+    procedure Button15Click(Sender: TObject);
+    procedure Button16Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -65,7 +70,7 @@ implementation
 
 {$R *.dfm}
 
-uses Data.Module, Log.Monitor, Unit4;
+uses Data.Module, Log.Monitor, Unit4, Cliente;
 
 procedure TForm1.Button10Click(Sender: TObject);
 begin
@@ -76,22 +81,25 @@ end;
 
 procedure TForm1.Button11Click(Sender: TObject);
 begin
-  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Lista Instancia');
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Inicio Listar Instancias(n)');
   var lLista := LocalCache.ListInstances;
   for var I  in lLista.Keys do
   begin
     var lSubLista := lLista.Items[I];
-    Memo1.Lines.Add(I);
-    for var J in lSubLista.Keys do
-      Memo1.Lines.Add('        '+lSubLista.Items[J]);
+    if I.Equals('CONFIGURACAO') then
+    begin
+      Memo1.Lines.Add(I);
+      for var J in lSubLista.Keys do
+        Memo1.Lines.Add('        '+lSubLista.Items[J]);
+    end;
   end;
-  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Final Instancia');
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Final Listar Instancias(n)');
 end;
 
 procedure TForm1.Button12Click(Sender: TObject);
 begin
   TConfiguracao
-    .New(ExtractFilePath(ParamStr(0))+'conf.txt')
+    .New(ExtractFilePath(ParamStr(0)))
     .TipoConfiguracao(ARQ)
     .SetDataBase('arquivo')
     .SetUserName('danilo')
@@ -108,6 +116,33 @@ begin
     .SetUserName('danilo')
     .SetPassWord('123')
     .SetDriveID('sql');
+end;
+
+procedure TForm1.Button14Click(Sender: TObject);
+begin
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Inicio Listar Instancia(1)');
+  var lLista := LocalCache.ListInstances;
+  for var I  in lLista.Keys do
+  begin
+    var lSubLista := lLista.Items[I];
+    Memo1.Lines.Add(I);
+  end;
+  TLogMonitor.WriteLog('D:\Danilo\Cursos\AcademiaDoCodigo\MelhorandoDesempEficienciaAplicDelphiCacheDados\Log.txt','Final Listar Instancia(1)');
+end;
+
+procedure TForm1.Button15Click(Sender: TObject);
+begin
+  LocalCache
+    .Instance('style')
+      .SetItem('font','8')
+      .SetItem('Cursor','crHandPoint')
+      .SetItem('color','clGreen');
+end;
+
+procedure TForm1.Button16Click(Sender: TObject);
+begin
+  var Conn : TSimpleQUeryFiredac.New(DMApp.FDConnection1);
+  var DAO  : iSimpleDAO<TClientes>;
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);
@@ -223,6 +258,8 @@ begin
     Exit;
   end;
   LocalCache.LoadDatabase('cache.lc4');
+  Self.Font.Size := LocalCache.Instance('style').GetItem('font').ToInteger;
+  Panel1.Color := TColor(LocalCache.Instance('style').GetItem('color'));
 end;
 
 procedure TForm1.FormDestroy(Sender: TObject);

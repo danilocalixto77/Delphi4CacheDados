@@ -64,17 +64,8 @@ Instalar via boss.
 
         boos i https://github.com/academiadocodigo/simpleorm
 
-
-1:30 pegar os campos e declarar os atributos na classe no delphi
-
-
-
-
+        PROBLEMA NO CÓDIGO CRIAR MÉTODOS NA CLASSE TCLIENTE PARA CORRIGIR
 
 ## 6 - Considerações
 
 #### 6.1 - Agradecimentos e Dicas
-
-
-
-
